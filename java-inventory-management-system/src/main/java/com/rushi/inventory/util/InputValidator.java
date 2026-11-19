@@ -1,0 +1,2 @@
+package com.rushi.inventory.util;
+public final class InputValidator { private InputValidator(){} public static String required(String v,String f){if(v==null||v.trim().isEmpty())throw new IllegalArgumentException(f+" cannot be empty.");return v.trim();} public static void price(double v){if(v<=0)throw new IllegalArgumentException("Price must be greater than 0.");} public static void quantity(int v){if(v<0)throw new IllegalArgumentException("Quantity cannot be negative.");} }

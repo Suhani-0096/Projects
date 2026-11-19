@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Job Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">Smart Job Portal</div>
+  <div id="userArea"></div>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <h1>Find the right job. Hire the right talent.</h1>
+    <p>A Java Spring Boot job portal for job seekers and recruiters.</p>
+  </section>
+
+  <section id="auth" class="grid">
+    <div class="card">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input id="loginEmail" type="email" placeholder="Email" required>
+        <input id="loginPassword" type="password" placeholder="Password" required>
+        <button>Login</button>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Create Account</h2>
+      <form id="registerForm">
+        <input id="regName" placeholder="Full name" required>
+        <input id="regEmail" type="email" placeholder="Email" required>
+        <input id="regPassword" type="password" placeholder="Password (6+ chars)" required>
+        <select id="regRole">
+          <option value="JOB_SEEKER">Job Seeker</option>
+          <option value="RECRUITER">Recruiter</option>
+        </select>
+        <button>Register</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">
+      <h2>Latest Jobs</h2>
+      <input id="search" placeholder="Search jobs, companies or skills">
+    </div>
+    <div id="jobs" class="job-grid"></div>
+  </section>
+
+  <section id="dashboard" class="card hidden">
+    <h2 id="dashboardTitle">Dashboard</h2>
+
+    <div id="recruiterPanel" class="hidden">
+      <h3>Post a Job</h3>
+      <form id="jobForm" class="form-grid">
+        <input id="jobTitle" placeholder="Job title" required>
+        <input id="jobCompany" placeholder="Company" required>
+        <input id="jobLocation" placeholder="Location" required>
+        <input id="jobSkills" placeholder="Skills (Java, SQL, Spring Boot)" required>
+        <input id="jobSalary" type="number" placeholder="Salary">
+        <textarea id="jobDescription" placeholder="Job description" required></textarea>
+        <button>Publish Job</button>
+      </form>
+
+      <h3>My Jobs</h3>
+      <div id="myJobs"></div>
+
+      <h3>Applications</h3>
+      <div id="recruiterApplications"></div>
+    </div>
+
+    <div id="seekerPanel" class="hidden">
+      <h3>My Applications</h3>
+      <div id="myApplications"></div>
+    </div>
+  </section>
+</main>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
